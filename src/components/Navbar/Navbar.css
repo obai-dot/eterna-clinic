@@ -1,0 +1,290 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  width: 100%;
+  padding: 24px 0;
+
+  color: var(--color-white);
+
+  transition:
+    padding var(--transition-smooth),
+    background var(--transition-smooth),
+    backdrop-filter var(--transition-smooth);
+}
+
+.navbar-scrolled {
+  padding: 15px 0;
+
+  background: rgba(15, 15, 13, 0.88);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-container {
+  width: min(92%, 1500px);
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+
+.navbar-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  line-height: 1;
+}
+
+.logo-main {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.logo-sub {
+  margin-top: 5px;
+
+  font-size: 0.48rem;
+  font-weight: 600;
+  letter-spacing: 0.48em;
+  color: var(--color-gold-light);
+}
+
+/* Navigation */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.5vw, 42px);
+}
+
+.navbar-link {
+  position: relative;
+
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.82);
+
+  transition: color var(--transition-smooth);
+}
+
+.navbar-link::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--color-gold-light);
+
+  transition: width var(--transition-smooth);
+}
+
+.navbar-link:hover {
+  color: var(--color-gold-light);
+}
+
+.navbar-link:hover::after {
+  width: 100%;
+}
+
+/* Appointment */
+
+.navbar-appointment {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 44px;
+  padding: 0 20px;
+
+  border: 1px solid rgba(223, 196, 139, 0.55);
+
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+
+  color: var(--color-gold-light);
+
+  transition:
+    background var(--transition-smooth),
+    color var(--transition-smooth),
+    border-color var(--transition-smooth),
+    transform var(--transition-smooth);
+}
+
+.navbar-appointment span {
+  font-size: 0.9rem;
+
+  transition: transform var(--transition-smooth);
+}
+
+.navbar-appointment:hover {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-dark);
+
+  transform: translateY(-2px);
+}
+
+.navbar-appointment:hover span {
+  transform: translate(2px, -2px);
+}
+
+.mobile-appointment {
+  display: none;
+}
+
+/* Mobile menu button */
+
+.menu-toggle {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  position: relative;
+}
+
+.menu-toggle span {
+  position: absolute;
+  left: 10px;
+
+  width: 24px;
+  height: 1px;
+
+  background: var(--color-white);
+
+  transition:
+    transform var(--transition-smooth),
+    top var(--transition-smooth);
+}
+
+.menu-toggle span:first-child {
+  top: 18px;
+}
+
+.menu-toggle span:last-child {
+  top: 26px;
+}
+
+.menu-toggle.active span:first-child {
+  top: 22px;
+  transform: rotate(45deg);
+}
+
+.menu-toggle.active span:last-child {
+  top: 22px;
+  transform: rotate(-45deg);
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-link {
+    font-size: 0.62rem;
+  }
+
+  .desktop-appointment {
+    padding: 0 15px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 850px) {
+  .navbar {
+    padding: 18px 0;
+  }
+
+  .navbar-scrolled {
+    padding: 13px 0;
+  }
+
+  .navbar-logo {
+    position: relative;
+    z-index: 1002;
+  }
+
+  .logo-main {
+    font-size: 1.6rem;
+  }
+
+  .desktop-appointment {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    z-index: 1002;
+  }
+
+  .navbar-links {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 28px;
+
+    background: rgba(15, 15, 13, 0.97);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-20px);
+
+    transition:
+      opacity var(--transition-smooth),
+      visibility var(--transition-smooth),
+      transform var(--transition-smooth);
+  }
+
+  .navbar-links.menu-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navbar-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+  }
+
+  .mobile-appointment {
+    display: inline-flex;
+
+    margin-top: 15px;
+
+    min-height: 50px;
+    padding: 0 25px;
+  }
+}

@@ -1,0 +1,243 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  /* Eterna Color System */
+  --color-gold: #c6a15b;
+  --color-gold-light: #dfc48b;
+  --color-gold-dark: #9f7d3e;
+
+  --color-ivory: #f8f5ef;
+  --color-cream: #eee8dc;
+  --color-beige: #d9d0c2;
+
+  --color-charcoal: #171715;
+  --color-dark: #0f0f0d;
+  --color-white: #ffffff;
+
+  /* Typography */
+  --font-display: "Cormorant Garamond", serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Layout */
+  --container-width: 1400px;
+  --section-padding: clamp(80px, 10vw, 160px);
+
+  /* Effects */
+  --transition-smooth: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  --border-light: rgba(198, 161, 91, 0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body,
+button,
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  object-fit: cover;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-white);
+}
+
+/* Reusable layout */
+
+.container {
+  width: min(90%, var(--container-width));
+  margin: 0 auto;
+}
+
+.section {
+  padding: var(--section-padding) 0;
+}
+
+/* Luxury typography */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-gold-dark);
+}
+
+.eyebrow::before {
+  content: "";
+  width: 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+.display-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+}
+
+.body-text {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(23, 23, 21, 0.68);
+}
+
+/* Premium button */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+
+  min-height: 52px;
+  padding: 0 28px;
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  transition:
+    transform var(--transition-smooth),
+    background var(--transition-smooth),
+    color var(--transition-smooth),
+    border-color var(--transition-smooth);
+}
+
+.btn-primary {
+  background: var(--color-charcoal);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--border-light);
+  color: var(--color-charcoal);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold-dark);
+  transform: translateY(-2px);
+}
+
+/* Accessibility */
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 4px;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  :root {
+    --section-padding: clamp(70px, 9vw, 110px);
+  }
+
+  .container {
+    width: min(92%, var(--container-width));
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  :root {
+    --section-padding: 80px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .btn {
+    min-height: 50px;
+    padding: 0 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --section-padding: 70px;
+  }
+
+  .body-text {
+    font-size: 0.9rem;
+  }
+}
