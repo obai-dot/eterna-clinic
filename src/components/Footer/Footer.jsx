@@ -57,10 +57,30 @@ const Footer = () => {
 
             <nav className="footer-links">
               <a href="#home">Home</a>
-              <a href="#about">About</a>
-              <a href="#services">Services</a>
-              <a href="#before-after">Results</a>
-              <a href="#gallery">Gallery</a>
+
+              <a href="#about">
+                About
+              </a>
+
+              <a href="#services">
+                Services
+              </a>
+
+              <a href="#before-after">
+                Results
+              </a>
+
+              <a href="#gallery">
+                Gallery
+              </a>
+
+              <a href="#testimonials">
+                Feedback
+              </a>
+
+              <a href="#contact">
+                Contact
+              </a>
             </nav>
 
           </div>
