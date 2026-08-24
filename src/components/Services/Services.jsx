@@ -50,7 +50,7 @@ const Services = () => {
           </div>
 
           <p className="services-intro">
-            From your smile to your skin, every treatment at Eterna
+            From your smile to your skin, every treatment at Éterna
             is thoughtfully designed to bring out your most confident self.
           </p>
         </div>
@@ -64,7 +64,7 @@ const Services = () => {
               <div className="service-image">
                 <img
                   src={service.image}
-                  alt={`${service.title} treatment at Eterna`}
+                  alt={`${service.title} treatment at Éterna`}
                 />
 
                 <div className="service-overlay"></div>

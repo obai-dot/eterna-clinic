@@ -31,7 +31,7 @@ const WhyEterna = () => {
         {/* Header */}
         <div className="why-eterna-header">
           <span className="why-eterna-eyebrow">
-            The Eterna Difference
+            The Éterna Difference
           </span>
 
           <h2>
@@ -41,7 +41,7 @@ const WhyEterna = () => {
           </h2>
 
           <p>
-            At Eterna, we bring together expertise, technology,
+            At Éterna, we bring together expertise, technology,
             and thoughtful design to create an experience that
             feels as exceptional as the results.
           </p>
@@ -71,7 +71,7 @@ const WhyEterna = () => {
 
         {/* Bottom Statement */}
         <div className="why-eterna-statement">
-          <span>ETERNА</span>
+          <span>ÉTERNА</span>
 
           <p>
             Confidence begins with feeling

@@ -5,38 +5,38 @@ const galleryItems = [
   {
     type: "image",
     src: "/images/gallery-1.jpg",
-    alt: "Eterna Clinic interior",
+    alt: "Éterna Clinic interior",
     size: "large",
   },
   {
     type: "image",
     src: "/images/gallery-2.jpg",
-    alt: "Eterna dental treatment",
+    alt: "Éterna dental treatment",
     size: "small",
   },
   {
     type: "video",
     src: "/videos/gallery-video-1.mp4",
     poster: "/images/gallery-video-poster.jpg",
-    alt: "Eterna Clinic experience",
+    alt: "Éterna Clinic experience",
     size: "small",
   },
   {
     type: "image",
     src: "/images/gallery-3.jpg",
-    alt: "Eterna aesthetic treatment",
+    alt: "Éterna aesthetic treatment",
     size: "medium",
   },
   {
     type: "image",
     src: "/images/gallery-4.jpg",
-    alt: "Eterna Clinic details",
+    alt: "Éterna Clinic details",
     size: "medium",
   },
   {
     type: "image",
     src: "/images/gallery-5.jpg",
-    alt: "Eterna skincare treatment",
+    alt: "Éterna skincare treatment",
     size: "large",
   },
 ];
@@ -53,7 +53,7 @@ const Gallery = () => {
 
           <div>
             <span className="gallery-eyebrow">
-              Inside Eterna
+              Inside Éterna
             </span>
 
             <h2>
@@ -64,7 +64,7 @@ const Gallery = () => {
           </div>
 
           <p>
-            Step inside Eterna and discover an environment where
+            Step inside Éterna and discover an environment where
             thoughtful design, advanced technology, and personalized
             care come together.
           </p>
@@ -113,7 +113,7 @@ const Gallery = () => {
                     </span>
 
                     <span>
-                      Eterna Experience
+                      Éterna Experience
                     </span>
                   </div>
 
@@ -143,7 +143,7 @@ const Gallery = () => {
 
           <img
             src={selectedImage}
-            alt="Eterna Clinic"
+            alt="Éterna Clinic"
           />
         </div>
       )}

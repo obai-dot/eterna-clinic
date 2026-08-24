@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Services from "./components/Services/Services";
-import FeaturedTreatments from "./components/Services/FeaturedTreatments";
 import BeforeAfter from "./components/BeforeAfter/BeforeAfter";
 import Gallery from "./components/Gallery/Gallery";
 import WhyEterna from "./components/WhyEterna/WhyEterna";
@@ -30,7 +29,6 @@ function App() {
         <Dental />
         <Aesthetic />
         <SkinCare />
-        <FeaturedTreatments />
         <Videos />
         <BeforeAfter />
         <Gallery />

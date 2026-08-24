@@ -77,12 +77,12 @@ const SkinCare = () => {
         <div className="skincare-image-wrapper">
           <img
             src="/images/services-skincare.jpg"
-            alt="Skin care treatment at Eterna Clinic"
+            alt="Skin care treatment at Éterna Clinic"
           />
 
           <div className="skincare-image-overlay">
             <span>
-              Eterna Skin
+              Éterna Skin
             </span>
 
             <span>

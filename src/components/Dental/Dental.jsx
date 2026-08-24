@@ -77,12 +77,12 @@ const Dental = () => {
         <div className="dental-image-wrapper">
           <img
             src="/images/services-dental.jpg"
-            alt="Dental treatment at Eterna Clinic"
+            alt="Dental treatment at Éterna Clinic"
           />
 
           <div className="dental-image-overlay">
             <span>
-              Eterna Dental
+              Éterna Dental
             </span>
 
             <span>

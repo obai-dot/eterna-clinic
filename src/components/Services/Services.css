@@ -1,13 +1,18 @@
 .services {
   position: relative;
+
   padding: 140px 7%;
-  background: #20201d;
+
+  background: #4a3024;
+
   color: #f8f6f1;
+
   overflow: hidden;
 }
 
 .services-container {
   max-width: 1400px;
+
   margin: 0 auto;
 }
 
@@ -17,21 +22,29 @@
 
 .services-header {
   display: flex;
+
   justify-content: space-between;
+
   align-items: flex-end;
+
   gap: 60px;
+
   margin-bottom: 75px;
 }
 
 .services-eyebrow {
   display: inline-block;
+
   margin-bottom: 22px;
 
   color: #c9a96a;
 
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 3px;
+
   text-transform: uppercase;
 }
 
@@ -39,24 +52,31 @@
   margin: 0;
 
   font-family: "Playfair Display", serif;
+
   font-size: clamp(48px, 5vw, 76px);
+
   font-weight: 400;
+
   line-height: 1.05;
+
   letter-spacing: -2px;
 }
 
 .services-header h2 em {
   color: #c9a96a;
+
   font-style: italic;
 }
 
 .services-intro {
   max-width: 390px;
+
   margin: 0 0 5px;
 
   color: rgba(248, 246, 241, 0.65);
 
   font-size: 14px;
+
   line-height: 1.9;
 }
 
@@ -66,7 +86,9 @@
 
 .services-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 25px;
 }
 
@@ -80,16 +102,21 @@
 
 .service-image {
   position: relative;
+
   height: 530px;
+
   overflow: hidden;
-  background: #292925;
+
+  background: #5a3b2e;
 }
 
 .service-image img {
   width: 100%;
+
   height: 100%;
 
   object-fit: cover;
+
   display: block;
 
   transition:
@@ -104,13 +131,14 @@
 
 .service-overlay {
   position: absolute;
+
   inset: 0;
 
   background: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.25),
+    rgba(61, 41, 32, 0.25),
     transparent 45%,
-    rgba(0, 0, 0, 0.4)
+    rgba(61, 41, 32, 0.4)
   );
 
   pointer-events: none;
@@ -120,10 +148,13 @@
 
 .service-number {
   position: absolute;
+
   top: 25px;
+
   left: 25px;
 
   font-size: 11px;
+
   letter-spacing: 2px;
 
   color: rgba(255, 255, 255, 0.85);
@@ -133,19 +164,25 @@
 
 .service-arrow {
   position: absolute;
+
   right: 25px;
+
   bottom: 25px;
 
   width: 52px;
+
   height: 52px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   border: 1px solid rgba(255, 255, 255, 0.45);
 
   color: white;
+
   text-decoration: none;
 
   font-size: 20px;
@@ -160,8 +197,10 @@
 
 .service-card:hover .service-arrow {
   background: #c9a96a;
+
   border-color: #c9a96a;
-  color: #20201d;
+
+  color: #4a3024;
 }
 
 /* =========================
@@ -176,7 +215,9 @@
   margin: 0 0 6px;
 
   font-family: "Playfair Display", serif;
+
   font-size: 34px;
+
   font-weight: 400;
 }
 
@@ -188,8 +229,11 @@
   color: #c9a96a;
 
   font-size: 11px;
+
   font-weight: 600;
+
   letter-spacing: 1.5px;
+
   text-transform: uppercase;
 }
 
@@ -201,12 +245,15 @@
   color: rgba(248, 246, 241, 0.58);
 
   font-size: 13px;
+
   line-height: 1.8;
 }
 
 .service-link {
   display: inline-flex;
+
   align-items: center;
+
   gap: 15px;
 
   color: #f8f6f1;
@@ -214,8 +261,11 @@
   text-decoration: none;
 
   font-size: 10px;
+
   font-weight: 600;
+
   letter-spacing: 1.8px;
+
   text-transform: uppercase;
 
   transition: gap 0.3s ease;
@@ -223,6 +273,7 @@
 
 .service-link span {
   color: #c9a96a;
+
   font-size: 16px;
 }
 
@@ -241,12 +292,15 @@
 
   .services-header {
     align-items: flex-start;
+
     flex-direction: column;
+
     gap: 25px;
   }
 
   .services-grid {
     grid-template-columns: 1fr;
+
     gap: 65px;
   }
 
@@ -274,6 +328,7 @@
 
   .services-header h2 {
     font-size: 46px;
+
     letter-spacing: -1px;
   }
 

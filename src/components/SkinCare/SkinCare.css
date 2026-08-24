@@ -3,7 +3,7 @@
 
   padding: 150px 7%;
 
-  background: #20201d;
+  background: #4a3024;
 
   color: #f8f6f1;
 
@@ -136,7 +136,7 @@
 
   background: linear-gradient(
     to top,
-    rgba(20, 20, 18, 0.55),
+    rgba(61, 41, 32, 0.55),
     transparent 45%
   );
 
@@ -300,7 +300,7 @@
 .skincare-treatment:hover .skincare-treatment-arrow {
   background: #c9a96a;
 
-  color: #20201d;
+  color: #4a3024;
 
   transform: translate(3px, -3px);
 }

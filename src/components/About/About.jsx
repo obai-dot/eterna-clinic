@@ -10,7 +10,7 @@ const About = () => {
           <div className="about-image">
             <img
               src="/images/about-clinic.jpg"
-              alt="Eterna Clinic"
+              alt="Éterna Clinic"
             />
           </div>
 
@@ -26,7 +26,7 @@ const About = () => {
         <div className="about-content">
 
           <span className="about-eyebrow">
-            About Eterna
+            About Éterna
           </span>
 
           <h2>
@@ -45,7 +45,7 @@ const About = () => {
 
           <p className="about-description">
             From advanced dental treatments to refined aesthetic and
-            skincare procedures, every experience at Eterna is designed
+            skincare procedures, every experience at Éterna is designed
             around one thing — you. Our approach combines modern
             technology, clinical expertise, and an uncompromising
             attention to detail.
@@ -69,7 +69,7 @@ const About = () => {
           </div>
 
           <a href="#appointment" className="about-button">
-            Discover Eterna
+            Discover Éterna
             <span>↗</span>
           </a>
 

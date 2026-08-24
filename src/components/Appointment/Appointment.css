@@ -11,8 +11,8 @@
 
   background:
     linear-gradient(
-      rgba(32, 32, 29, 0.78),
-      rgba(32, 32, 29, 0.88)
+      rgba(74, 48, 36, 0.78),
+      rgba(74, 48, 36, 0.88)
     ),
     url("/images/appointment-bg.jpg");
 
@@ -133,7 +133,7 @@
 
   background: #c9a96a;
 
-  color: #20201d;
+  color: #4a3024;
 
   text-decoration: none;
 

@@ -32,7 +32,7 @@ const Footer = () => {
 
             <a href="#home" className="footer-logo">
               <span className="footer-logo-main">
-                ETERNA
+                ÉTERNA
               </span>
 
               <span className="footer-logo-sub">
@@ -141,14 +141,14 @@ const Footer = () => {
 
         {/* Large Brand */}
         <div className="footer-big-logo">
-          ETERNA
+          ÉTERNA
         </div>
 
         {/* Bottom */}
         <div className="footer-bottom">
 
           <span>
-            © 2026 Eterna Clinic. All rights reserved.
+            © 2026 Éterna Clinic. All rights reserved.
           </span>
 
           <span>

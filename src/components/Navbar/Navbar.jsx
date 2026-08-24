@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Services", href: "#services" },
   { label: "Results", href: "#before-after" },
   { label: "Gallery", href: "#gallery" },
+  { label: "Feedback", href: "#testimonials" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -34,15 +35,21 @@ function Navbar() {
     <header className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
       <div className="navbar-container">
 
+        {/* Logo */}
         <a
           href="#home"
           className="navbar-logo"
           onClick={handleLinkClick}
+          aria-label="Eterna Clinic Home"
         >
-          <span className="logo-main">ETERNA</span>
-          <span className="logo-sub">CLINIC</span>
+          <img
+            src="/images/eterna-logo.png"
+            alt="Eterna Dental and Beauty Clinic"
+            className="navbar-logo-image"
+          />
         </a>
 
+        {/* Navigation */}
         <nav
           className={`navbar-links ${
             isMenuOpen ? "menu-open" : ""
@@ -68,6 +75,7 @@ function Navbar() {
           </a>
         </nav>
 
+        {/* Desktop appointment */}
         <a
           href="#appointment"
           className="navbar-appointment desktop-appointment"
@@ -76,6 +84,7 @@ function Navbar() {
           <span>↗</span>
         </a>
 
+        {/* Mobile menu */}
         <button
           className={`menu-toggle ${
             isMenuOpen ? "active" : ""

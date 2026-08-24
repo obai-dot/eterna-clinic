@@ -21,7 +21,7 @@ function Hero() {
         <div className="hero-content">
 
           <span className="hero-eyebrow">
-            Eterna Clinic
+            Éterna Clinic
           </span>
 
           <h1 className="hero-title">

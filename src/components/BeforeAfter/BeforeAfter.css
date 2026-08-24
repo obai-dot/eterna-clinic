@@ -1,7 +1,7 @@
 .before-after {
   position: relative;
   padding: 150px 7%;
-  background: #20201d;
+  background: #4a3024;
   color: #f8f6f1;
   overflow: hidden;
 }
@@ -83,7 +83,7 @@
   user-select: none;
   touch-action: none;
 
-  background: #2a2925;
+  background: #5a3b2e;
 }
 
 /* AFTER */
@@ -141,7 +141,7 @@
 
   padding: 10px 15px;
 
-  background: rgba(32, 32, 29, 0.75);
+  background: rgba(74, 48, 36, 0.75);
 
   backdrop-filter: blur(8px);
 
@@ -203,7 +203,7 @@
 
   border: 1px solid #c9a96a;
 
-  background: #20201d;
+  background: #4a3024;
 
   border-radius: 50%;
 }

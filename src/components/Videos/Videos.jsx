@@ -10,7 +10,7 @@ const Videos = () => {
 
           <div>
             <span className="videos-eyebrow">
-              The Eterna Experience
+              The Éterna Experience
             </span>
 
             <h2>
@@ -21,7 +21,7 @@ const Videos = () => {
           </div>
 
           <p>
-            Step inside Eterna and discover a space where
+            Step inside Éterna and discover a space where
             precision, care, and modern aesthetics come together.
           </p>
 
@@ -49,7 +49,7 @@ const Videos = () => {
           <div className="video-overlay">
 
             <span>
-              Eterna Clinic
+              Éterna Clinic
             </span>
 
             <span>
