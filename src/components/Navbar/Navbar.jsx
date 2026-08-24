@@ -20,6 +20,8 @@ function Navbar() {
       setIsScrolled(window.scrollY > 30);
     };
 
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -27,12 +29,32 @@ function Navbar() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add("menu-open-body");
+    } else {
+      document.body.classList.remove("menu-open-body");
+    }
+
+    return () => {
+      document.body.classList.remove("menu-open-body");
+    };
+  }, [isMenuOpen]);
+
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
-    <header className={`navbar ${isScrolled ? "navbar-scrolled" : ""}`}>
+    <header
+      className={`navbar ${
+        isScrolled ? "navbar-scrolled" : ""
+      } ${isMenuOpen ? "menu-active" : ""}`}
+    >
       <div className="navbar-container">
 
         {/* Logo */}
@@ -44,7 +66,7 @@ function Navbar() {
         >
           <img
             src="/images/eterna-logo.png"
-            alt="Eterna Dental and Beauty Clinic"
+            alt="Éterna Dental and Beauty Clinic"
             className="navbar-logo-image"
           />
         </a>
@@ -54,6 +76,7 @@ function Navbar() {
           className={`navbar-links ${
             isMenuOpen ? "menu-open" : ""
           }`}
+          aria-hidden={!isMenuOpen ? undefined : false}
         >
           {navLinks.map((link) => (
             <a
@@ -84,14 +107,13 @@ function Navbar() {
           <span>↗</span>
         </a>
 
-        {/* Mobile menu */}
+        {/* Mobile menu button */}
         <button
+          type="button"
           className={`menu-toggle ${
             isMenuOpen ? "active" : ""
           }`}
-          onClick={() =>
-            setIsMenuOpen((prev) => !prev)
-          }
+          onClick={toggleMenu}
           aria-label={
             isMenuOpen
               ? "Close menu"

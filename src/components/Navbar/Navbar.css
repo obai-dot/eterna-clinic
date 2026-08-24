@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
+
   z-index: 1000;
 
   width: 100%;
@@ -12,21 +13,20 @@
   transition:
     padding var(--transition-smooth),
     background var(--transition-smooth),
-    backdrop-filter var(--transition-smooth);
+    border-color var(--transition-smooth);
 }
 
 .navbar-scrolled {
   padding: 10px 0;
 
-  background: rgba(67, 40, 30, 0.92);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  background: rgba(74, 48, 36, 0.94);
 
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .navbar-container {
+  position: relative;
+
   width: min(92%, 1500px);
   margin: 0 auto;
 
@@ -40,6 +40,10 @@
 ========================= */
 
 .navbar-logo {
+  position: relative;
+
+  z-index: 1003;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,11 +53,11 @@
   line-height: 1;
 }
 
-.navbar-logo img {
+.navbar-logo-image {
+  display: block;
+
   width: 180px;
   height: auto;
-
-  display: block;
 
   object-fit: contain;
 
@@ -62,13 +66,11 @@
     width var(--transition-smooth);
 }
 
-.navbar-logo:hover img {
+.navbar-logo:hover .navbar-logo-image {
   transform: scale(1.03);
 }
 
-/* Slightly smaller logo after scrolling */
-
-.navbar-scrolled .navbar-logo img {
+.navbar-scrolled .navbar-logo-image {
   width: 160px;
 }
 
@@ -122,7 +124,7 @@
 }
 
 /* =========================
-   APPOINTMENT BUTTON
+   APPOINTMENT
 ========================= */
 
 .navbar-appointment {
@@ -179,16 +181,22 @@
 }
 
 /* =========================
-   MOBILE MENU BUTTON
+   MENU BUTTON
 ========================= */
 
 .menu-toggle {
   display: none;
 
+  position: relative;
+
   width: 44px;
   height: 44px;
 
-  position: relative;
+  z-index: 1004;
+
+  border: 0;
+
+  background: transparent;
 }
 
 .menu-toggle span {
@@ -227,16 +235,24 @@
 }
 
 /* =========================
+   LOCK BODY WHEN MENU IS OPEN
+========================= */
+
+body.menu-open-body {
+  overflow: hidden;
+  touch-action: none;
+}
+
+/* =========================
    TABLET
 ========================= */
 
 @media (max-width: 1100px) {
-
-  .navbar-logo img {
+  .navbar-logo-image {
     width: 155px;
   }
 
-  .navbar-scrolled .navbar-logo img {
+  .navbar-scrolled .navbar-logo-image {
     width: 145px;
   }
 
@@ -258,29 +274,53 @@
 ========================= */
 
 @media (max-width: 850px) {
-
   .navbar {
     padding: 12px 0;
+
+    /*
+      No backdrop-filter here.
+      iPhone Safari can break fixed children
+      when a parent uses backdrop-filter.
+    */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   .navbar-scrolled {
     padding: 9px 0;
+
+    background: rgba(74, 48, 36, 0.97);
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  /*
+    When the menu is open, the full-screen
+    menu supplies the background.
+  */
+
+  .navbar.menu-active,
+  .navbar.menu-active.navbar-scrolled {
+    background: transparent;
+    border-bottom: 0;
+
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 
   /* Logo */
 
-  .navbar-logo {
-    position: relative;
-
-    z-index: 1002;
-  }
-
-  .navbar-logo img {
+  .navbar-logo-image {
     width: 135px;
   }
 
-  .navbar-scrolled .navbar-logo img {
+  .navbar-scrolled .navbar-logo-image {
     width: 125px;
+  }
+
+  .navbar.menu-active .navbar-logo-image {
+    width: 135px;
   }
 
   /* Hide desktop appointment */
@@ -289,20 +329,29 @@
     display: none;
   }
 
-  /* Hamburger */
+  /* Show hamburger */
 
   .menu-toggle {
     display: block;
-
-    z-index: 1002;
   }
 
-  /* Mobile navigation */
+  /* =========================
+     FULL SCREEN MENU
+  ========================= */
 
   .navbar-links {
     position: fixed;
 
-    inset: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 1001;
+
+    width: 100%;
+    min-height: 100vh;
+    height: 100dvh;
 
     display: flex;
 
@@ -311,49 +360,52 @@
     align-items: center;
     justify-content: center;
 
-    gap: 28px;
+    gap: 24px;
 
-    background: rgba(67, 40, 30, 0.98);
+    padding:
+      calc(105px + env(safe-area-inset-top))
+      25px
+      calc(35px + env(safe-area-inset-bottom));
 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: #4a3024;
 
     opacity: 0;
-
     visibility: hidden;
-
     pointer-events: none;
 
-    transform: translateY(-20px);
+    transform: translateY(-10px);
+
+    overflow-y: auto;
+    overscroll-behavior: none;
 
     transition:
-      opacity var(--transition-smooth),
-      visibility var(--transition-smooth),
-      transform var(--transition-smooth);
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
   }
 
   .navbar-links.menu-open {
     opacity: 1;
-
     visibility: visible;
-
     pointer-events: auto;
 
     transform: translateY(0);
   }
 
   .navbar-link {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
 
     letter-spacing: 0.18em;
+
+    color: #f8f6f1;
   }
 
   .mobile-appointment {
     display: inline-flex;
 
-    margin-top: 15px;
+    margin-top: 12px;
 
-    min-height: 50px;
+    min-height: 52px;
 
     padding: 0 25px;
   }
@@ -364,12 +416,31 @@
 ========================= */
 
 @media (max-width: 480px) {
-
-  .navbar-logo img {
+  .navbar-logo-image {
     width: 120px;
   }
 
-  .navbar-scrolled .navbar-logo img {
+  .navbar-scrolled .navbar-logo-image {
     width: 110px;
+  }
+
+  .navbar.menu-active .navbar-logo-image {
+    width: 120px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+  }
+
+  .navbar-link {
+    font-size: 0.78rem;
+  }
+
+  .mobile-appointment {
+    min-height: 48px;
+
+    padding: 0 20px;
+
+    font-size: 0.58rem;
   }
 }
